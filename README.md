@@ -1,4 +1,18 @@
-# Getting Started with Create React App
+# Content generation app
+
+## About the app
+
+This app will generate content using the Davinci Azure OpenAI endpoint for a number of mock products.
+
+## Running the app locally
+
+### Environment variables
+
+- Create a file named `.env.local`
+- Add a variable called: `REACT_APP_OPENAI_API_KEY=<KEY>`
+- type: `npm run start`
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
