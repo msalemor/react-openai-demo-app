@@ -42,6 +42,7 @@ const App = () => {
         {
           prompt: prompt,
           max_tokens: 300,
+          temperature: 0.6,
           n: 1,
           stop: "",
         },
@@ -63,6 +64,15 @@ const App = () => {
     console.info("Done processing sales descriptions");
   };
 
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+
+    // These options are needed to round to whole numbers if that's what you want.
+    //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+    //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+  });
+
   // Execute a load time
   useEffect(() => {}, []);
 
@@ -70,18 +80,49 @@ const App = () => {
   return (
     <div className="App container">
       <h1>Product Description Generator</h1>
-      <div>
-        <button className="btn btn-danger m-2" onClick={onClear}>
-          Clear
-        </button>
-        <button className="btn btn-primary m-2" onClick={onLoad}>
+      <div className="mb-3">
+        <button className="btn btn-primary" onClick={onLoad}>
           Load
         </button>
-        <button className="btn btn-secondary m-2" onClick={onProcess}>
+        <button className="btn btn-success m-2" onClick={onProcess}>
           Process
         </button>
+        <button className="btn btn-danger" onClick={onClear}>
+          Clear
+        </button>{" "}
       </div>
-      <table className="table table-striped">
+      <div>
+        {products.map((product) => (
+          <div className="card mb-3" key={product.id}>
+            <div className="card-header bg-dark text-light fw-bold">
+              {product.make} {product.model} {product.color} for{" "}
+              {formatter.format(product.price)}
+            </div>
+            <div className="card-body bg-light">
+              <div className="row">
+                <div className="col-md-2">
+                  <p className="fw-bold">Features:</p>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: product.features.join("<br/>"),
+                    }}
+                  />
+                  <br />
+                  &nbsp;
+                </div>
+                <div className="col-md-8">
+                  <p className="fw-bold">Description:</p>
+                  <p>{product.description}</p>
+                </div>
+              </div>
+            </div>
+            <div className="card-footer">
+              <span className="fw-bold">Warranty:</span> {product.warranty}
+            </div>
+          </div>
+        ))}
+      </div>
+      {/* <table className="table table-striped">
         <thead>
           <tr>
             <th>Make</th>
@@ -112,7 +153,7 @@ const App = () => {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> */}
     </div>
   );
 };
