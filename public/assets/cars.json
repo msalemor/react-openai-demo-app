@@ -1,0 +1,98 @@
+[
+  {
+    "year": 2017,
+    "make": "Toyota",
+    "model": "Corolla",
+    "package": "LE",
+    "engine_type": "1.8L 4-cylinder",
+    "price": 12900
+  },
+  {
+    "year": 2018,
+    "make": "Honda",
+    "model": "Civic",
+    "package": "LX",
+    "engine_type": "2.0L 4-cylinder",
+    "price": 14900
+  },
+  {
+    "year": 2016,
+    "make": "Ford",
+    "model": "Escape",
+    "package": "SE",
+    "engine_type": "1.6L 4-cylinder",
+    "price": 11500
+  },
+  {
+    "year": 2015,
+    "make": "Chevrolet",
+    "model": "Malibu",
+    "package": "LT",
+    "engine_type": "2.5L 4-cylinder",
+    "price": 8900
+  },
+  {
+    "year": 2019,
+    "make": "Nissan",
+    "model": "Altima",
+    "package": "S",
+    "engine_type": "2.5L 4-cylinder",
+    "price": 15900
+  },
+  {
+    "year": 2017,
+    "make": "Hyundai",
+    "model": "Elantra",
+    "package": "SE",
+    "engine_type": "2.0L 4-cylinder",
+    "price": 10500
+  },
+  {
+    "year": 2014,
+    "make": "Kia",
+    "model": "Optima",
+    "package": "LX",
+    "engine_type": "2.4L 4-cylinder",
+    "price": 7900
+  },
+  {
+    "year": 2018,
+    "make": "Mazda",
+    "model": "CX-5",
+    "package": "Sport",
+    "engine_type": "2.5L 4-cylinder",
+    "price": 17900
+  },
+  {
+    "year": 2016,
+    "make": "Subaru",
+    "model": "Outback",
+    "package": "2.5i Premium",
+    "engine_type": "2.5L 4-cylinder",
+    "price": 13900
+  },
+  {
+    "year": 2015,
+    "make": "Toyota",
+    "model": "Camry",
+    "package": "SE",
+    "engine_type": "2.5L 4-cylinder",
+    "price": 10900
+  },
+  {
+    "year": 2018,
+    "make": "Honda",
+    "model": "Accord",
+    "package": "LX",
+    "engine_type": "1.5L 4-cylinder",
+    "price": 16900
+  },
+  {
+    "year": 2017,
+    "make": "Nissan",
+    "model": "Sentra",
+    "package": "S",
+    "engine_type": "1.8L 4-cylinder",
+    "price": 11900
+  }
+]
