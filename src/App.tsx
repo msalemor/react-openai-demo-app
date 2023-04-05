@@ -6,6 +6,8 @@ const App = () => {
   // State
   const [products, setProducts] = useState<Product[]>([]);
   const [_, setMyForceUpdate] = useState(0);
+  const [processing, setProcessing] = useState(false);
+  const [count, setCount] = useState(0);
 
   // Supporting functions
   const getProductDescription = (product: Product): string => {
@@ -18,6 +20,8 @@ const App = () => {
   };
 
   const onClear = () => {
+    setCount(0);
+    setProcessing(false);
     setProducts([]);
   };
 
@@ -30,6 +34,9 @@ const App = () => {
   };
 
   const onProcess = () => {
+    setProcessing(true);
+    setCount(products.length);
+
     console.info("Processing sales descriptions");
     products.forEach(async (product) => {
       let description = getProductDescription(product);
@@ -58,8 +65,13 @@ const App = () => {
       product.description = completion;
       console.info(product);
 
-      setProducts(products);
+      let newCount = count - 1;
+      setCount(newCount);
       setMyForceUpdate(Math.random());
+
+      if (newCount <= 0) {
+        setProcessing(false);
+      }
     });
     console.info("Done processing sales descriptions");
   };
@@ -80,10 +92,18 @@ const App = () => {
     <div className="App container">
       <h1>Product Description Generator</h1>
       <div className="mb-3">
-        <button className="btn btn-primary" onClick={onLoad}>
+        <button
+          className="btn btn-primary"
+          onClick={onLoad}
+          disabled={processing}
+        >
           Load
         </button>
-        <button className="btn btn-success m-2" onClick={onProcess}>
+        <button
+          className="btn btn-success m-2"
+          onClick={onProcess}
+          disabled={processing}
+        >
           Process
         </button>
         <button className="btn btn-danger" onClick={onClear}>
