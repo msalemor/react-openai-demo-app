@@ -67,7 +67,6 @@ const App = () => {
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
-
     // These options are needed to round to whole numbers if that's what you want.
     //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
     //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
@@ -122,38 +121,6 @@ const App = () => {
           </div>
         ))}
       </div>
-      {/* <table className="table table-striped">
-        <thead>
-          <tr>
-            <th>Make</th>
-            <th>Model</th>
-            <th>Color</th>
-            <th>Features</th>
-            <th>Warranty</th>
-            <th>Price</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((product) => (
-            <tr key={product.id}>
-              <td>{product.make}</td>
-              <td>{product.model}</td>
-              <td>{product.color}</td>
-              <td>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: product.features.join("<br/>"),
-                  }}
-                />
-              </td>
-              <td>{product.warranty}</td>
-              <td>${product.price}</td>
-              <td>{product.description}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table> */}
     </div>
   );
 };
